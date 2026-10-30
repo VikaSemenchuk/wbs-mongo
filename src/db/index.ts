@@ -6,7 +6,7 @@ if (!URI) {
     throw new Error("Problem with URI")
 }
 
-const client = new MongoClient(URI);
+export const client = new MongoClient(URI);
 
 try {
     await client.connect();
@@ -15,4 +15,4 @@ try {
     process.exit(1)
 }
 
-export const db = client.db();
+export const db = client.db("blog");
